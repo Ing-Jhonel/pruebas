@@ -1,4 +1,5 @@
 #include "funciones.h"
+#include "estructuras.h"
 #include <iostream>
 #include <windows.h>
 #include <locale.h> //libreria para incluir el idioma español
@@ -6,6 +7,13 @@
 using namespace std;
 
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+struct PlatosDeComida{
+	string nombre;
+	string ingredientes;
+	float precio;
+	float costo;
+	int cantidad;
+};
 
 int main(){
 	
@@ -16,6 +24,7 @@ int main(){
 	char s;
 	int modalidad;
 	int max= 100;
+	PlatosDeComida comida[max];
 	do{
 		color(hConsole, 79);
 		cout << endl;
@@ -117,6 +126,22 @@ int main(){
 								int n=0;
 								switch(opcion){
 									case 'a':
+										if(n<=100){
+											cout << "\t\t\t\t\t\tNombre: ";
+											if(n>=0) cin.ignore();
+											getline(cin, comida[n].nombre);
+											cout << "\t\t\t\t\t\tIngredientes: ";
+											getline(cin, comida[n].ingredientes);
+											cout << "\t\t\t\t\t\tPrecio: ";
+											cin >> comida[n].precio;
+											cout << "\t\t\t\t\t\tCosto: ";
+											cin >> comida[n].costo;
+											cout << "\t\t\t\t\t\tCantidad: ";
+											cin >> comida[n].cantidad;
+										} else {
+											cout << "Se introdujo el maximo de platos posibles." << endl;
+										}
+										cout << endl;
 										break;
 									case 'b':
 										if(n==0){
