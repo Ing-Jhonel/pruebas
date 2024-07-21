@@ -57,6 +57,94 @@ int main(){
 		cin >> modalidad;
 		cout << endl;
 		
+		char opcion;
+		switch(modalidad){
+			case 1:
+				texto = "¡AHORA ERES EL DUEÑO DEL RESTAURANTE!";
+				s= '*';
+				enjaular(texto, s); cout << endl << endl;
+				texto = "¿Que quieres hacer?";
+				centrar(texto); cout << endl << endl;
+				do{
+					texto = "A) Administrar la cocina";
+					centrar(texto); cout << endl << endl;
+					texto = "B) Administrar el negocio";
+					centrar(texto); cout << endl << endl;
+					texto = "C) Administrar personal";
+					centrar(texto); cout << endl << endl;
+					texto = "D) Cambiar de rol";
+					centrar(texto); cout << endl << endl;
+					texto = "--------";
+					centrar(texto); cout << endl;
+					centrarCin(1);
+					cin >> opcion;
+					
+					cout << endl;
+					
+					switch (opcion){
+						case 'A':
+							s = '-';
+							separador(s);
+							texto = "Entrando a la cocina...";
+							enlinear(texto, s);
+							separador(s); cout << endl << endl;
+							texto = "Indique la accion que va a realizar";
+							centrar(texto);
+							s= '=';
+							subrayar(texto, s); cout << endl << endl;
+							do{
+								anchoJaula = 40;
+								salto = 0;
+								s = '*';
+								linea(anchoJaula, s, 2); cout << endl;
+								texto = "a) Agregar una comida";
+								contenidoJaula(texto, anchoJaula, s, salto); cout << endl;
+								texto = "b) Eliminar una comida";
+								contenidoJaula(texto, anchoJaula, s, salto); cout << endl;
+								texto = "c) Actualizar una comida";
+								contenidoJaula(texto, anchoJaula, s, salto); cout << endl;
+								texto = "d) Ver stock del menú";
+								contenidoJaula(texto, anchoJaula, s, salto); cout << endl;
+								texto = "e) Salir de la cocina";
+								contenidoJaula(texto, anchoJaula, s, 1); cout << endl;
+								linea(anchoJaula, s, 0); cout << endl << endl;
+								texto = "--------";
+								centrar(texto); cout << endl;
+								centrarCin(1);
+								cin >> opcion;
+								cout << endl;
+								
+								int n=0;
+								switch(opcion){
+									case 'a':
+										break;
+									case 'b':
+										if(n==0){
+											
+										}
+										break;
+								}
+							} while(opcion!='e');
+							break;
+						case 'B':
+							break;
+						case 'C':
+							break;
+						default:
+							break;
+					}
+				} while(opcion != 'D');
+				
+				break;
+				
+			case '2':
+				break;
+			case '3':
+				break;
+			default:
+				cout << "Indique el numero de las modalidades disponibles.";
+				break;
+		}
 	} while (modalidad!=4);
 	return 0;
 }
